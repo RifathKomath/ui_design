@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:uidesign/additional/colors.dart';
-import 'package:uidesign/home_page.dart';
+import 'package:uidesign/bottom_nav.dart';
 import 'package:uidesign/signing/signup_page.dart';
 
 class SignInPage extends StatefulWidget {
@@ -84,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
                 width: 343,
                 child: TextButton(
                   onPressed: () {
-                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
+                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const BottomNav()), (route) => false);
                   },
                   child: Text(
                     'Sign In',

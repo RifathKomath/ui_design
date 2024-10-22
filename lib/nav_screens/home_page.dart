@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w400))
                 ],
               ),
-             const SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SingleChildScrollView(
@@ -137,50 +137,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight: Radius.circular(20))),
-        height: 75,
-        child: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.orange,
-                  size: 25,
-                ),
-                label: 'Shop',
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.search_outlined,
-                      color: Color.fromRGBO(109, 56, 5, 1), size: 25),
-                  label: 'Explore'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart,
-                      color: Color.fromRGBO(109, 56, 5, 1), size: 25),
-                  label: 'Cart'),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.favorite,
-                  color: Color.fromRGBO(109, 56, 5, 1),
-                  size: 25,
-                ),
-                label: 'Favorite',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.supervisor_account_sharp,
-                  color: Color.fromRGBO(109, 56, 5, 1),
-                  size: 25,
-                ),
-                label: 'Account',
-              ),
-            ],
-            selectedFontSize: 15,
-            selectedItemColor: Colors.orange,
-            unselectedItemColor: Color.fromRGBO(109, 56, 5, 1),
-            showUnselectedLabels: true),
       ),
     );
   }

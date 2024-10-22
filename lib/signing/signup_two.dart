@@ -99,9 +99,6 @@ class _SignupTwoState extends State<SignupTwo> {
                       backgroundColor: WidgetStatePropertyAll(Colors.orange)),
                 ),
               ),
-              const SizedBox(
-                height: 5,
-              ),
               
             ],
           ),

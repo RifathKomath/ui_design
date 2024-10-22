@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uidesign/additional/colors.dart';
+import 'package:uidesign/signing/sign_in_page.dart';
 import 'package:uidesign/signing/signup_page.dart';
 
 class FirstSplash extends StatefulWidget {
@@ -68,7 +69,9 @@ class _FirstSplashState extends State<FirstSplash> {
                 height: 50,
                 width: 343,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInPage(),));
+                  },
                   child: Text(
                     'Sign In',
                     style: const TextStyle(color: Colors.orange),
