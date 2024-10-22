@@ -93,6 +93,9 @@ flutter:
     - assets/image/cart_image_3.png
     - assets/image/cart_image_4.png
     - assets/image/Group 260.png
+    - assets/image/Group (1).png
+    - assets/image/Scooter Delivery.png
+    - assets/image/Group.png
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

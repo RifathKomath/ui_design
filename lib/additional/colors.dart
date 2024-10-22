@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 TextStyle smallParagraph(){
     return const TextStyle(
@@ -6,4 +7,6 @@ TextStyle smallParagraph(){
         
     );
 }
+
+
 
