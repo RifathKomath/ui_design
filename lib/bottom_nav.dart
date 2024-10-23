@@ -33,7 +33,7 @@ bottomNavigationBar: Container(
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
-                  color: Colors.orange,
+                  color: Color.fromRGBO(109, 56, 5, 1),
                   size: 25,
                 ),
                 label: 'Shop',

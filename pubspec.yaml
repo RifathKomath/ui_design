@@ -38,6 +38,8 @@ dependencies:
   intl_phone_field: ^3.2.0
   carousel_slider: ^5.0.0
   intl: ^0.19.0
+  item_count_number_button: ^1.9.2
+  count_button: ^1.0.1
   
   
 
@@ -96,6 +98,10 @@ flutter:
     - assets/image/Group (1).png
     - assets/image/Scooter Delivery.png
     - assets/image/Group.png
+    - assets/image/salmon.png
+    - assets/image/apple.png
+    - assets/image/Avocado-PNG-Clipart 1.png
+    - assets/image/banana.png
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

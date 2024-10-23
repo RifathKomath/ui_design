@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uidesign/account_screens/address.dart';
 import 'package:uidesign/account_screens/orders.dart';
+import 'package:uidesign/account_screens/payment.dart';
+import 'package:uidesign/account_screens/profile.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -30,9 +32,13 @@ class _AccountState extends State<Account> {
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: ListView(
-            children:  [
-               ListTile(
-                leading:const  Icon(Icons.supervisor_account,color:Colors.orange,size: 30,),
+            children: [
+              ListTile(
+                leading: const Icon(
+                  Icons.supervisor_account,
+                  color: Colors.orange,
+                  size: 30,
+                ),
                 title: const Text(
                   'Profile',
                   style: TextStyle(
@@ -40,10 +46,15 @@ class _AccountState extends State<Account> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Orders())),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Profile())),
               ),
               ListTile(
-                leading: const Icon(Icons.card_travel,color:Colors.orange,size: 30,),
+                leading: const Icon(
+                  Icons.card_travel,
+                  color: Colors.orange,
+                  size: 30,
+                ),
                 title: const Text(
                   'Orders',
                   style: TextStyle(
@@ -51,10 +62,15 @@ class _AccountState extends State<Account> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Orders())),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Orders())),
               ),
               ListTile(
-                leading: const Icon(Icons.location_on_sharp,color:Colors.orange,size: 30,),
+                leading: const Icon(
+                  Icons.location_on_sharp,
+                  color: Colors.orange,
+                  size: 30,
+                ),
                 title: const Text(
                   'Address',
                   style: TextStyle(
@@ -62,19 +78,26 @@ class _AccountState extends State<Account> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-                onTap:() {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Address()));
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const Address()));
                 },
               ),
-            const   ListTile(
-                leading: Icon(Icons.payment,color:Colors.orange,size: 30,),
-                title: Text(
+              ListTile(
+                leading: const Icon(
+                  Icons.payment,
+                  color: Colors.orange,
+                  size: 30,
+                ),
+                title: const Text(
                   'Payment',
                   style: TextStyle(
                       color: Color.fromRGBO(127, 83, 29, 10),
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Payment())),
               )
             ],
           ),

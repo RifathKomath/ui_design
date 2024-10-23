@@ -10,9 +10,9 @@ class Explore extends StatefulWidget {
 
 class _ExploreState extends State<Explore> {
   List<String> catagoriesImages = [
+    'assets/image/catgories_3.png',
     'assets/image/catgories_1.png',
     'assets/image/catgories_2.png',
-    'assets/image/catgories_3.png',
     'assets/image/catgories_8.png',
     'assets/image/catgories_10.png',
     'assets/image/catgories_6.png',
@@ -76,11 +76,11 @@ class _ExploreState extends State<Explore> {
                       child: Center(
                         child: Image.asset(catagoriesImages[index]),
                       ),
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Categories())),
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Categories())),
                     );
                   },
                   itemCount: catagoriesImages.length,
-                  
                 ),
               )
             ],
