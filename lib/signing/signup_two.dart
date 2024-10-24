@@ -60,8 +60,14 @@ class _SignupTwoState extends State<SignupTwo> {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.lock,color: Colors.orange,),
-                  suffixIcon: Icon(Icons.visibility_outlined,color: Colors.orange,),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.orange,
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility_outlined,
+                    color: Colors.orange,
+                  ),
                   label: Text('Password'),
                   border: OutlineInputBorder(),
                 ),
@@ -70,17 +76,21 @@ class _SignupTwoState extends State<SignupTwo> {
               const SizedBox(
                 height: 15,
               ),
-                 TextFormField(
-                  
+              TextFormField(
                 decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.lock,color: Colors.orange,),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.orange,
+                  ),
                   label: Text('Confirm Password'),
-                  suffixIcon: Icon(Icons.visibility_outlined,color: Colors.orange,),
+                  suffixIcon: Icon(
+                    Icons.visibility_outlined,
+                    color: Colors.orange,
+                  ),
                   border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.name,
               ),
-             
               const SizedBox(
                 height: 20,
               ),
@@ -89,7 +99,8 @@ class _SignupTwoState extends State<SignupTwo> {
                 width: 343,
                 child: TextButton(
                   onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SignupThree()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SignupThree()));
                   },
                   child: Text(
                     'Next',
@@ -99,7 +110,6 @@ class _SignupTwoState extends State<SignupTwo> {
                       backgroundColor: WidgetStatePropertyAll(Colors.orange)),
                 ),
               ),
-              
             ],
           ),
         ),

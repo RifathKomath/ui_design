@@ -66,9 +66,7 @@ class _HomePageState extends State<HomePage> {
                           color: Color.fromRGBO(109, 56, 5, 1),
                           fontSize: 22,
                           fontWeight: FontWeight.w700)),
-                  const SizedBox(
-                    width: 150,
-                  ),
+                  const Spacer(),
                   InkWell(
                       child: const Text('See All',
                           style: TextStyle(
@@ -103,9 +101,7 @@ class _HomePageState extends State<HomePage> {
                           color: Color.fromRGBO(109, 56, 5, 1),
                           fontSize: 22,
                           fontWeight: FontWeight.w700)),
-                  SizedBox(
-                    width: 120,
-                  ),
+                  Spacer(),
                   InkWell(
                     child: Text('See All',
                         style: TextStyle(

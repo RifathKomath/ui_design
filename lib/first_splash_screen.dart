@@ -43,9 +43,10 @@ class _FirstSplashState extends State<FirstSplash> {
                 style: smallParagraph(),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(
-                height: 40,
-              ),
+              // const SizedBox(
+              //   height: 40,
+              // ),
+             const Spacer(),
               SizedBox(
                 height: 50,
                 width: 343,
@@ -85,7 +86,8 @@ class _FirstSplashState extends State<FirstSplash> {
                     ),
                   ),
                 ),
-              )
+              ),
+              const SizedBox(height: 30,)
             ],
           ),
         ),

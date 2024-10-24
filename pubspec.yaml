@@ -40,6 +40,7 @@ dependencies:
   intl: ^0.19.0
   item_count_number_button: ^1.9.2
   count_button: ^1.0.1
+  flutter_slidable: ^3.1.1
   
   
 
@@ -102,7 +103,14 @@ flutter:
     - assets/image/apple.png
     - assets/image/Avocado-PNG-Clipart 1.png
     - assets/image/banana.png
-    
+    - assets/image/53 кредитная карта.png
+    - assets/image/Group (2).png
+    - assets/image/Group 237.png
+    - assets/image/pngegg.png
+    - assets/image/pngegg (2).png
+    - assets/image/pngegg (3).png
+    - assets/image/pngegg (1).png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

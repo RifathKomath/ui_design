@@ -8,5 +8,12 @@ TextStyle smallParagraph(){
     );
 }
 
+TextStyle itemReviewTitle(){
+  return const TextStyle(color: Color.fromRGBO(109, 56, 5, 1),fontWeight: FontWeight.w700,fontSize: 20);
+}
+
+TextStyle itemReviewSubTitle(){
+  return const TextStyle(color: Color.fromRGBO(109, 56, 5, 1),fontSize: 18);
+}
 
 

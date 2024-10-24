@@ -18,7 +18,14 @@ class _CategoriesState extends State<Categories> {
     'assets/image/Avocado-PNG-Clipart 1.png',
     'assets/image/salmon.png',
   ];
-  List<String> titles = ['Red apple', 'Original Banana', 'Avocado Bowl', 'Salmon', 'Avocado Bowl', 'Salmon'];
+  List<String> titles = [
+    'Red apple',
+    'Original Banana',
+    'Avocado Bowl',
+    'Salmon',
+    'Avocado Bowl',
+    'Salmon'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +46,11 @@ class _CategoriesState extends State<Categories> {
                           fontWeight: FontWeight.w700,
                           color: Colors.orange),
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 15,left: 15),
+                      padding: const EdgeInsets.only(right: 15, left: 15),
                       child: SizedBox(
                         height: 48,
                         width: 343,
@@ -67,25 +76,33 @@ class _CategoriesState extends State<Categories> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                        customTab(label: 'Fruits'),
-                        customTab(label: 'Vegitables'),
-                        customTab(label: 'Fish'),
-                        customTab(label: 'Toys'),
+                          customTab(label: 'Fruits'),
+                          customTab(label: 'Vegitables'),
+                          customTab(label: 'Fish'),
+                          customTab(label: 'Toys'),
                         ],
                       ),
                     )
                   ],
                 )),
           )),
-          body: GridView.builder(gridDelegate:const  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 25.0,
-                  childAspectRatio: 1.0,
-          
-          ), itemBuilder: (context , index){
-            return customCard(image: images[index], label: titles[index], subLabel: '', icon: Icons.attach_money_rounded, price: '4,99');
-          },itemCount: images.length,),
-          
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 25.0,
+          childAspectRatio: 1.0,
+        ),
+        itemBuilder: (context, index) {
+          return customCard(
+              image: images[index],
+              label: titles[index],
+              subLabel: '',
+              icon: Icons.attach_money_rounded,
+              price: '4,99');
+        },
+        itemCount: images.length,
+      ),
     );
   }
 }

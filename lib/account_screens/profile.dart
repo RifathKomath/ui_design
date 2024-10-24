@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:uidesign/account_screens/change_password.dart';
+import 'package:uidesign/account_screens/edit_profile.dart';
+import 'package:uidesign/account_screens/language.dart';
+import 'package:uidesign/account_screens/my_cards.dart';
 import 'package:uidesign/additional/list_tile.dart';
+import 'package:uidesign/signing/sign_in_page.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -9,6 +14,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  bool _selectedSwitch = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +39,20 @@ class _ProfileState extends State<Profile> {
             customListView(
                 icon: Icons.supervisor_account,
                 icon_2: Icons.keyboard_arrow_right_outlined,
-                label: 'Edit Profile'),
+                label: 'Edit Profile',
+                destinationScreen:const EditProfile() ),
+
             customListView(
                 icon: Icons.key,
                 icon_2: Icons.keyboard_arrow_right_outlined,
-                label: 'Change Password'),
+                label: 'Change Password',
+                destinationScreen: const ChangePassword()),
+
             customListView(
                 icon: Icons.credit_card,
                 icon_2: Icons.keyboard_arrow_right_outlined,
-                label: 'My Cards'),
+                label: 'My Cards',
+                destinationScreen: const MyCards()),
             const SizedBox(
               height: 20,
             ),
@@ -57,28 +68,52 @@ class _ProfileState extends State<Profile> {
                         fontWeight: FontWeight.w700),
                   )),
             ),
-           const  SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             ListTile(
-    leading: Icon(Icons.abc,color:const  Color.fromRGBO(109, 56, 5, 1),size: 35,),
-    title: Text('Notifications',style: const TextStyle(color: Color.fromRGBO(109, 56, 5, 1),fontSize: 15,fontWeight: FontWeight.w700),),
-    trailing:Switch(value: true, onChanged: (value){
-        setState(() {
-          value=false;
-        });
-    },activeColor: Colors.orange,
-    )
-  ),
-           const ListTile(
-    leading: Icon(Icons.language,color:const  Color.fromRGBO(109, 56, 5, 1),size: 35,),
-    title: Text('Language',style: const TextStyle(color: Color.fromRGBO(109, 56, 5, 1),fontSize: 15,fontWeight: FontWeight.w700),),
-    trailing: Icon(Icons.keyboard_arrow_right_outlined,color: const Color.fromRGBO(109, 56, 5, 1),),
-  ),
-   const ListTile(
-    leading: Icon(Icons.logout,color:const  Color.fromRGBO(109, 56, 5, 1),size: 35,),
-    title: Text('Logout',style: const TextStyle(color: Color.fromRGBO(109, 56, 5, 1),fontSize: 15,fontWeight: FontWeight.w700),),
-   
-  )
-  
+                leading:const  Icon(
+                  Icons.notifications,
+                  color:  Color.fromRGBO(109, 56, 5, 1),
+                  size: 35,
+                ),
+                title:const Text(
+                  'Notifications',
+                  style:  TextStyle(
+                      color: Color.fromRGBO(109, 56, 5, 1),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700),
+                ),
+                trailing: Switch(
+                  value: _selectedSwitch,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedSwitch = value;
+                    });
+                  },
+                  activeColor: Colors.orange,
+                )),
+            customListView(
+                icon: Icons.language,
+                icon_2: Icons.keyboard_arrow_right_outlined,
+                label: 'Language',
+                destinationScreen: const Language()),
+             ListTile(
+              onTap: () => 
+              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const SignInPage()),(route)=>false),
+              leading:const Icon(
+                Icons.logout,
+                color: Color.fromRGBO(109, 56, 5, 1),
+                size: 35,
+              ),
+              title:const  Text(
+                'Logout',
+                style: TextStyle(
+                    color: Color.fromRGBO(109, 56, 5, 1),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700),
+              ),
+            )
           ],
         ),
       ),
