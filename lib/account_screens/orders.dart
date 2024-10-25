@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});
@@ -9,6 +10,9 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> {
+
+  final AppTextColors _appTextColors = AppTextColors();
+  
   final String formattedDate = DateFormat('MMMM d, y').format(DateTime.now());
   final String formattedTime = DateFormat('HH:mm').format(DateTime.now());
 
@@ -27,14 +31,11 @@ class _OrdersState extends State<Orders> {
               child: AppBar(
                 iconTheme: const IconThemeData(color: Colors.orange),
                 backgroundColor: Colors.white,
-                bottom: const PreferredSize(
+                bottom:  PreferredSize(
                     preferredSize: Size.fromHeight(120),
                     child: Text(
                       'Orders',
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.orange),
+                      style: _appTextColors.appTextStyle_700_24,
                     )),
               )),
           body: Column(

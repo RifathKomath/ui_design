@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 import 'package:uidesign/additional/custom_text_form.dart';
 
 class NewAddress extends StatefulWidget {
@@ -9,6 +10,7 @@ class NewAddress extends StatefulWidget {
 }
 
 class _NewAddressState extends State<NewAddress> {
+  final AppTextColors _appTextColors = AppTextColors();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,14 +19,11 @@ class _NewAddressState extends State<NewAddress> {
           child: AppBar(
             iconTheme: const IconThemeData(color: Colors.orange),
             backgroundColor: Colors.white,
-            bottom: const PreferredSize(
-                preferredSize: Size.fromHeight(120),
+            bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(120),
                 child: Text(
                   'New Address',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.orange),
+                  style: _appTextColors.appTextStyle_700_24
                 )),
           )),
       body: SingleChildScrollView(

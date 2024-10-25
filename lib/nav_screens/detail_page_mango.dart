@@ -1,5 +1,6 @@
 import 'package:count_button/count_button.dart';
 import 'package:flutter/material.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 import 'package:uidesign/additional/colors.dart';
 import 'package:uidesign/additional/custom_card.dart';
 import 'package:uidesign/additional/custom_item_text.dart';
@@ -12,6 +13,9 @@ class DetailPageMango extends StatefulWidget {
 }
 
 class _DetailPageMangoState extends State<DetailPageMango> {
+
+  final AppTextColors _appTextColors = AppTextColors();
+  
   int countValues =0;
   @override
   Widget build(BuildContext context) {

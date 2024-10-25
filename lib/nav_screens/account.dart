@@ -3,6 +3,7 @@ import 'package:uidesign/account_screens/address.dart';
 import 'package:uidesign/account_screens/orders.dart';
 import 'package:uidesign/account_screens/payment.dart';
 import 'package:uidesign/account_screens/profile.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -12,6 +13,9 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+  
+  final AppTextColors _appTextColors = AppTextColors();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,15 +23,10 @@ class _AccountState extends State<Account> {
             preferredSize: const Size.fromHeight(65),
             child: AppBar(
               backgroundColor: Colors.white,
-              bottom: const PreferredSize(
-                  preferredSize: Size.fromHeight(120),
-                  child: Text(
-                    'Account',
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.orange),
-                  )),
+              bottom: PreferredSize(
+                  preferredSize: const Size.fromHeight(120),
+                  child: Text('Account',
+                      style: _appTextColors.appTextStyle_700_24)),
             )),
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -39,13 +38,8 @@ class _AccountState extends State<Account> {
                   color: Colors.orange,
                   size: 30,
                 ),
-                title: const Text(
-                  'Profile',
-                  style: TextStyle(
-                      color: Color.fromRGBO(127, 83, 29, 10),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
+                title:
+                    Text('Profile', style: _appTextColors.appTextStyle_700_18),
                 onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const Profile())),
               ),
@@ -55,13 +49,8 @@ class _AccountState extends State<Account> {
                   color: Colors.orange,
                   size: 30,
                 ),
-                title: const Text(
-                  'Orders',
-                  style: TextStyle(
-                      color: Color.fromRGBO(127, 83, 29, 10),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
+                title:
+                    Text('Orders', style: _appTextColors.appTextStyle_700_18),
                 onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const Orders())),
               ),
@@ -71,13 +60,8 @@ class _AccountState extends State<Account> {
                   color: Colors.orange,
                   size: 30,
                 ),
-                title: const Text(
-                  'Address',
-                  style: TextStyle(
-                      color: Color.fromRGBO(127, 83, 29, 10),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
+                title:
+                    Text('Address', style: _appTextColors.appTextStyle_700_18),
                 onTap: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => const Address()));
@@ -89,13 +73,8 @@ class _AccountState extends State<Account> {
                   color: Colors.orange,
                   size: 30,
                 ),
-                title: const Text(
-                  'Payment',
-                  style: TextStyle(
-                      color: Color.fromRGBO(127, 83, 29, 10),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
+                title:
+                    Text('Payment', style: _appTextColors.appTextStyle_700_18),
                 onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const Payment())),
               )

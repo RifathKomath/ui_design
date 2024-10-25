@@ -57,109 +57,139 @@ class _CartState extends State<Cart> {
           ),
         ),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return Slidable(
-            direction: Axis.horizontal,
-            
-            endActionPane: ActionPane(motion: const BehindMotion(), children: [
-              SlidableAction(onPressed: (context)=>_delete,
-              backgroundColor: Colors.red,
-                icon: Icons.delete,
-                label: 'Delete',
-                autoClose: true,
-              )
-            ]),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => screens[index]));
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 65,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                            width: 70,
-                            height: 110,
-                            child: Image.asset(images[index])),
-                        const SizedBox(width: 10),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              titles[index],
-                              style: const TextStyle(
-                                  color: Color.fromRGBO(109, 56, 5, 1),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Row(
-                              children: [
-                                CountButton(
-                                  selectedValue: countValues[index],
-                                  minValue: 0,
-                                  maxValue: 99,
-                                  backgroundColor: Colors.white,
-                                  buttonSize: const Size.fromRadius(13),
-                                  incrementIcon: const Icon(
-                                    Icons.add,
-                                    color: Color.fromRGBO(109, 56, 5, 1),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.separated(
+              itemBuilder: (context, index) {
+                return Slidable(
+                  direction: Axis.horizontal,
+                  endActionPane:
+                      ActionPane(motion: const BehindMotion(), children: [
+                    SlidableAction(
+                      onPressed: (context) => _delete,
+                      backgroundColor: Colors.red,
+                      icon: Icons.delete,
+                      label: 'Delete',
+                      autoClose: true,
+                    )
+                  ]),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => screens[index]));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 65,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                  width: 70,
+                                  height: 110,
+                                  child: Image.asset(images[index])),
+                              const SizedBox(width: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    titles[index],
+                                    style: const TextStyle(
+                                        color: Color.fromRGBO(109, 56, 5, 1),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
                                   ),
-                                  decrementIcon: const Icon(Icons.remove,
-                                      color: Color.fromRGBO(109, 56, 5, 1)),
-                                  onChanged: (value) {
-                                    setState(() {
-                                      countValues[index] = value;
-                                    });
-                                  },
-                                  valueBuilder: (value) {
-                                    return Text(
-                                      value.toString(),
-                                      style: const TextStyle(fontSize: 18),
-                                    );
-                                  },
-                                ),
-                                const SizedBox(width: 75),
-                                const Icon(
-                                  Icons.attach_money_outlined,
-                                  weight: 5,
-                                  color: Color.fromRGBO(109, 56, 5, 1),
-                                  size: 20,
-                                ),
-                                Text(
-                                  prices[index],
-                                  style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color.fromRGBO(109, 56, 5, 1)),
-                                ),
-                                const SizedBox(width: 5),
-                                Text(
-                                  titleLast[index],
-                                  style: const TextStyle(
-                                      color: Color.fromRGBO(109, 56, 5, 1)),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Row(
+                                    children: [
+                                      CountButton(
+                                        selectedValue: countValues[index],
+                                        minValue: 0,
+                                        maxValue: 99,
+                                        backgroundColor: Colors.white,
+                                        buttonSize: const Size.fromRadius(13),
+                                        incrementIcon: const Icon(
+                                          Icons.add,
+                                          color: Color.fromRGBO(109, 56, 5, 1),
+                                        ),
+                                        decrementIcon: const Icon(Icons.remove,
+                                            color:
+                                                Color.fromRGBO(109, 56, 5, 1)),
+                                        onChanged: (value) {
+                                          setState(() {
+                                            countValues[index] = value;
+                                          });
+                                        },
+                                        valueBuilder: (value) {
+                                          return Text(
+                                            value.toString(),
+                                            style:
+                                                const TextStyle(fontSize: 18),
+                                          );
+                                        },
+                                      ),
+                                      const SizedBox(width: 75),
+                                      const Icon(
+                                        Icons.attach_money_outlined,
+                                        weight: 5,
+                                        color: Color.fromRGBO(109, 56, 5, 1),
+                                        size: 20,
+                                      ),
+                                      Text(
+                                        prices[index],
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color:
+                                                Color.fromRGBO(109, 56, 5, 1)),
+                                      ),
+                                      const SizedBox(width: 5),
+                                      Text(
+                                        titleLast[index],
+                                        style: const TextStyle(
+                                            color:
+                                                Color.fromRGBO(109, 56, 5, 1)),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+              },
+              separatorBuilder: (context, index) {
+                return const Divider();
+              },
+              itemCount: images.length,
             ),
-          );
-        },
-        separatorBuilder: (context, index) {
-          return const Divider();
-        },
-        itemCount: images.length,
+          ),
+          SizedBox(
+            height: 50,
+            width: 343,
+            child: TextButton(
+              onPressed: () {
+                // Navigator.of(context).push(MaterialPageRoute(
+                //     builder: (context) => const SignUp()));
+              },
+              child: Text(
+                'Check Out',
+                style: const TextStyle(color: Colors.white),
+              ),
+              style: const ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(Colors.orange)),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          )
+        ],
       ),
     );
   }

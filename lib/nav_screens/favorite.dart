@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 import 'package:uidesign/additional/colors.dart';
 
 class Favorite extends StatefulWidget {
@@ -9,6 +10,8 @@ class Favorite extends StatefulWidget {
 }
 
 class _FavoriteState extends State<Favorite> {
+
+  final AppTextColors _appTextColors = AppTextColors();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,14 +21,11 @@ class _FavoriteState extends State<Favorite> {
           backgroundColor: Colors.white,
           iconTheme: const IconThemeData(color: Colors.orange),
           centerTitle: true,
-          bottom: const PreferredSize(
-              preferredSize: Size.fromHeight(120),
+          bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(120),
               child: Text(
                 'Favorite',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.orange),
+                style: _appTextColors.appTextStyle_700_24
               )),
         ),
       ),
@@ -39,12 +39,9 @@ class _FavoriteState extends State<Favorite> {
                     width: 301.95,
                     height: 353.39,
                     child: Image.asset('assets/image/Group 260.png')),
-                const Text(
+                 Text(
                   'Your heart is empty',
-                  style: TextStyle(
-                      color: Color.fromRGBO(127, 83, 29, 10),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                  style: _appTextColors.appTextStyle_700_20
                 ),
                  Text('Start fall in love with some good\ngoods',textAlign: TextAlign.center,style: smallParagraph(),),
                  const SizedBox(height: 90),

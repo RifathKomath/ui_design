@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 import 'package:uidesign/signing/sign_in_page.dart';
 
 class ChangePassword extends StatefulWidget {
@@ -9,6 +10,9 @@ class ChangePassword extends StatefulWidget {
 }
 
 class _ChangePasswordState extends State<ChangePassword> {
+
+  final AppTextColors _appTextColors = AppTextColors();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,14 +21,11 @@ class _ChangePasswordState extends State<ChangePassword> {
           child: AppBar(
             iconTheme: const IconThemeData(color: Colors.orange),
             backgroundColor: Colors.white,
-            bottom: const PreferredSize(
-                preferredSize: Size.fromHeight(120),
+            bottom:  PreferredSize(
+                preferredSize:const Size.fromHeight(120),
                 child: Text(
                   'Change Password',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.orange),
+                  style: _appTextColors.appTextStyle_700_24
                 )),
           )),
       body: Center(

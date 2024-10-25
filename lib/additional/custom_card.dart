@@ -7,71 +7,86 @@ Widget customCard({
   required IconData icon,
   required String price,
 }) {
-  return SizedBox(
-    width: 165,
-    height: 215,
-    child: Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      color: Colors.white,
-      elevation: 5,
-      margin:const EdgeInsets.symmetric(vertical: 5,horizontal: 5),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: SizedBox(
-              height: 90,
-              child: Image.asset(image)),
+  return Builder(
+    builder: (context) {
+      return SizedBox(
+        width: MediaQuery.of(context).size.width * 0.45, 
+        height: MediaQuery.of(context).size.height * 0.3,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-               const SizedBox(height: 5,),
-                Text(
-                  label,
-                  style: const TextStyle(
-                      color: Color.fromRGBO(109, 56, 5, 1),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700),
+          color: Colors.white,
+          elevation: 5,
+          margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: SizedBox(
+                  height: 90,
+                  child: Image.asset(image),
                 ),
-                Text(subLabel,
-                    style: const TextStyle(
-                        color: Color.fromRGBO(109, 56, 5, 1), fontSize: 10)),
-                Row(
+              ),
+              
+              Padding(
+                padding: const EdgeInsets.only(left: 10,right: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      icon,
-                      color: Colors.orange,
+                    const SizedBox(height: 25),
+                    Text(
+                      label,
+                      style: const TextStyle(
+                        color: Color.fromRGBO(109, 56, 5, 1),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     Text(
-                      price,
+                      subLabel,
                       style: const TextStyle(
-                          color: Colors.orange,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-                    const SizedBox(
-                      width: 45,
-                    ),
-                    InkWell(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.green),
-                        child: const Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ),
+                        color: Color.fromRGBO(109, 56, 5, 1),
+                        fontSize: 10,
                       ),
-                    )
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          icon,
+                          color: Colors.orange,
+                        ),
+                        Text(
+                          price,
+                          style: const TextStyle(
+                            color: Colors.orange,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        
+                     const Spacer(),
+                        InkWell(
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.green,
+                            ),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ),
-          )
-        ],
-      ),
-    ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
   );
 }

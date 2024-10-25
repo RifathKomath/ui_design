@@ -23,8 +23,8 @@ class _FirstSplashState extends State<FirstSplash> {
           child: Column(
             children: [
               SizedBox(
-                height: 322,
-                child: Image.asset('assets/image/Illustration.png')),
+                  height: 322,
+                  child: Image.asset('assets/image/Illustration.png')),
               const SizedBox(
                 height: 25,
               ),
@@ -46,7 +46,7 @@ class _FirstSplashState extends State<FirstSplash> {
               // const SizedBox(
               //   height: 40,
               // ),
-             const Spacer(),
+              const Spacer(),
               SizedBox(
                 height: 50,
                 width: 343,
@@ -71,7 +71,9 @@ class _FirstSplashState extends State<FirstSplash> {
                 width: 343,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignInPage(),));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SignInPage(),
+                    ));
                   },
                   child: Text(
                     'Sign In',
@@ -87,7 +89,9 @@ class _FirstSplashState extends State<FirstSplash> {
                   ),
                 ),
               ),
-              const SizedBox(height: 30,)
+              const SizedBox(
+                height: 30,
+              )
             ],
           ),
         ),

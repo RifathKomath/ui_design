@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uidesign/account_screens/show_card.dart';
+import 'package:uidesign/additional/app_text_colors.dart';
 import 'package:uidesign/additional/cards_form_field.dart';
 
 class NewCard extends StatefulWidget {
@@ -10,10 +11,9 @@ class NewCard extends StatefulWidget {
 }
 
 class _NewCardState extends State<NewCard> {
-  final titeStyle = const TextStyle(
-      color: Color.fromRGBO(109, 56, 5, 1),
-      fontSize: 18,
-      fontWeight: FontWeight.w700);
+
+  final AppTextColors _appTextColors = AppTextColors();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,15 +22,10 @@ class _NewCardState extends State<NewCard> {
           child: AppBar(
             iconTheme: const IconThemeData(color: Colors.orange),
             backgroundColor: Colors.white,
-            bottom: const PreferredSize(
-                preferredSize: Size.fromHeight(120),
-                child: Text(
-                  'New Card',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.orange),
-                )),
+            bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(120),
+                child: Text('New Card',
+                    style: _appTextColors.appTextStyle_700_24)),
           )),
       body: SingleChildScrollView(
         child: Center(
@@ -45,7 +40,7 @@ class _NewCardState extends State<NewCard> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       'Card number',
-                      style: titeStyle,
+                      style: _appTextColors.appTextStyle_700_18,
                     )),
                 cardFormField(label: 'xxxx xxxx xxxx xxxx'),
                 const SizedBox(
@@ -55,7 +50,7 @@ class _NewCardState extends State<NewCard> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       'Expiry Date',
-                      style: titeStyle,
+                      style: _appTextColors.appTextStyle_700_18,
                     )),
                 cardFormField(label: 'xxxx xxxx xxxx xxxx'),
                 const SizedBox(
@@ -65,16 +60,19 @@ class _NewCardState extends State<NewCard> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       'CCV',
-                      style: titeStyle,
+                      style: _appTextColors.appTextStyle_700_18,
                     )),
                 cardFormField(label: 'xxxx xxxx xxxx xxxx'),
-                const SizedBox(height: 190,),
-               SizedBox(
+                const SizedBox(
+                  height: 190,
+                ),
+                SizedBox(
                   height: 50,
                   width: 343,
                   child: TextButton(
                     onPressed: () {
-                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const ShowCard()));
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const ShowCard()));
                     },
                     child: Text(
                       'Add Card',
@@ -84,7 +82,6 @@ class _NewCardState extends State<NewCard> {
                         backgroundColor: WidgetStatePropertyAll(Colors.orange)),
                   ),
                 ),
-               
               ],
             ),
           ),
