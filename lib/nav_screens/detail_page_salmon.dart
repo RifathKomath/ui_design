@@ -69,7 +69,7 @@ class _DetailPageSalmonState extends State<DetailPageSalmon> {
                         },
                       ),
                     ),
-                    //  Spacer(flex: ,),
+                  
                     const SizedBox(
                       width: 20,
                     ),

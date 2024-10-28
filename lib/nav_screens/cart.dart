@@ -19,7 +19,7 @@ class _CartState extends State<Cart> {
     const DetailPageMango(),
     const DetailPageBanana(),
     const DetailPageAvacado(),
-    const DetailPageSalmon()
+    const DetailPageSalmon(),
   ];
 
   List<String> images = [

@@ -5,8 +5,9 @@ import 'package:uidesign/additional/custom_card.dart';
 import 'package:uidesign/additional/custom_item_text.dart';
 
 class DetailPageAvacado extends StatefulWidget {
-  const DetailPageAvacado({super.key});
 
+  const DetailPageAvacado({super.key});
+  
   @override
   State<DetailPageAvacado> createState() => _DetailPageAvacadoState();
 }

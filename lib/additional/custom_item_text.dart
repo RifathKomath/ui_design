@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+// import 'package:uidesign/additional/app_text_colors.dart';
 
 Widget customItemText(
     {required String label,
     required String label_2,
     required String label_3,
     required String label_4}) {
+  // final AppTextColors _appTextColors = AppTextColors();
+
   return Padding(
     padding: const EdgeInsets.only(left: 15, right: 15),
     child: Column(
